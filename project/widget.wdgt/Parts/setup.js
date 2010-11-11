@@ -5,8 +5,22 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
-    "button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "tailIt", "rightImageWidth": 5, "text": "Tail" },
-    "done": { "creationFunction": "CreateGlassButton", "onclick": "showFront", "text": "Done" },
-    "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" }
+    "done": { "creationFunction": "CreateGlassButton", "onclick": "tailIt", "text": "Done" },
+    "find_file_button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "locateFiles", "rightImageWidth": 5, "text": "find file" },
+    "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" },
+    "input_feedback": { "text": "input feedback", "view": "DC.Text" },
+    "logwindow": { "autoHideScrollbars": true, "creationFunction": "CreateScrollArea", "hasVerticalScrollbar": true, "scrollbarDivSize": 18, "scrollbarMargin": 6, "spacing": 4 },
+    "rowLabel": { "text": "Item", "view": "DC.Text" },
+    "selected_file": { "allowsEmptySelection": true, "dataArray": ["Item 1", "Item 2", "Item 3"], "dataSourceName": "FilelistDataSource", "labelElementId": "rowLabel", "listStyle": "List.DESKTOP_LIST", "sampleRows": 3, "selectionEnabled": true, "useDataSource": true, "view": "DC.List" },
+    "tail_label": { "text": "tail_label", "view": "DC.Text" },
+    "text": { "text": "Full path label", "view": "DC.Text" },
+    "text1": { "text": "file name label", "view": "DC.Text" }
 };
+
+
+
+
+
+
+
 

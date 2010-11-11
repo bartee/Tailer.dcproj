@@ -11,6 +11,14 @@
 function load()
 {
     dashcode.setupParts();
+    /** set up the correct pointers **/
+    elements.filename = document.getElementById('filename');
+    elements.input_feedback = document.getElementById("input_feedback");    
+    elements.log_window = document.getElementById("logwindow");
+    elements.selectedfile = document.getElementById('selected_file');
+    elements.selectedfile.style.display = 'none';
+    window.filesystem = new FileSystem();
+    showBack();
 }
 
 //
@@ -109,18 +117,4 @@ if (window.widget) {
     widget.onsync = sync;
 }
 
-var log_text = "";
-function logIt(msg) {
-    log_text += msg;
-    var log_window = document.getElementById("logwindow");
-    log_window.innerText = log_text;
-} 
-
-function tailIt(event)
-{
-    var file_to_tail = document.getElementById('target_file').value;    
-    logIt("Starting tail for: "+file_to_tail);
-    widget.system("/usr/bin/tail -f "+file_to_tail, function() { logIt("Done!") }).onreadoutput = function(stdout) {
-        logIt(stdout);
-    }    
-}
+var elements = {}

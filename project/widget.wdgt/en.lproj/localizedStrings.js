@@ -5,6 +5,16 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
+    "Done": "Done",
+    "file name label": "Filename",
+    "find file": "find file",
+    "Full path label": "Select your file...",
     "Hello, World!": "Hello, World!",
-    "Done": "Done"
+    "input feedback": " ",
+    "tail_label": "Enter a valid filename",
+    "Text": "File name"
 };
+
+
+
+
