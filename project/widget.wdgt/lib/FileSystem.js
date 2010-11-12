@@ -13,6 +13,10 @@ var FileSystem = Class.create({
     locate: function (filename) 
     {
         var result = widget.system("locate *"+filename, null).outputString;
+        if(typeof(result) =='undefined')
+        {
+            return false;
+        }
         return result.split('\n');
     },
     
@@ -21,7 +25,7 @@ var FileSystem = Class.create({
     **/
     file : function (filename) 
     {
-        var output = widget.system("/usr/bin/file " + filename, null).outputString;
+        var output = widget.system("file " + filename, null).outputString;
         return output
     }
 });

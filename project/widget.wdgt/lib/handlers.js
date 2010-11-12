@@ -9,30 +9,25 @@ function logIt(msg) {
 
 function tailIt(event)
 {
-    validateFilePath();
-    var file_to_tail = elements.filename.value;    
+    if (!validateFilePath()){
+        return false;
+    }
+    
     logIt("Starting tail for: " + file_to_tail);
-    widget.system("tail -f "+file_to_tail, function() { logIt("Done!") }).onreadoutput = function(stdout) {
+    widget.system("tail -f "+file_to_tail, null).onreadoutput = function(stdout) {
         logIt(stdout);
     }
-    showFront(event);
+    
 }
 
 function validateFilePath()
 {
-    var file_to_tail = elements.filename.value;
+ 
     if (file_to_tail == ''){
         provide_input_feedback('No file input given!', false);
         return false;
     }
-    
-    var output = window.filesystem.file(file_to_tail);
-    
-    if(output.match(/cannot\ open/)){
-        provide_input_feedback('File not found!', false);
-        return false;
-    }
-    return false;
+    return true;
 }
 
 function locateFiles(event)
@@ -43,7 +38,13 @@ function locateFiles(event)
         return false;
     }
     files = window.filesystem.locate(filename);
-
+    
+    if (!files) {
+        provide_input_feedback('No file found by that name!', false);
+        elements.selectedfile.style.display = 'none';
+        return false;
+    }
+    
     var rest = files.pop();
     FilelistDataSource._rowData = files;
     elements.selectedfile.object.reloadData();
@@ -87,8 +88,8 @@ var FilelistDataSource = {
 		// Assign a click event handler for the row.
 		rowElement.onclick = function(event) {
 			// Do something interesting
-			file_to_tail = event.target;
-            alert(file_to_tail);
+			file_to_tail = event.target.innerText;
+
 		};
 	}
 };

@@ -6,11 +6,11 @@
 	<dict>
 		<key>widget.wdgt/Parts/List.js:138</key>
 		<string></string>
-		<key>widget.wdgt/lib/handlers.js:84</key>
-		<string>-prepareRow</string>
 		<key>widget.wdgt/lib/handlers.js:85</key>
 		<string>-prepareRow</string>
-		<key>widget.wdgt/lib/handlers.js:90</key>
+		<key>widget.wdgt/lib/handlers.js:86</key>
+		<string>-prepareRow</string>
+		<key>widget.wdgt/lib/handlers.js:91</key>
 		<string>-prepareRow</string>
 		<key>widget.wdgt/main.js:121</key>
 		<string>-</string>
@@ -71,7 +71,7 @@
 		<key>ContentSplitViewConfig</key>
 		<integer>5</integer>
 		<key>SplitViewConfig</key>
-		<integer>3</integer>
+		<integer>1</integer>
 		<key>_indexOfCollapsedView</key>
 		<integer>0</integer>
 		<key>sizes</key>
@@ -119,9 +119,7 @@
 			<array>
 				<integer>0</integer>
 				<integer>1</integer>
-				<integer>7</integer>
-				<integer>0</integer>
-				<integer>0</integer>
+				<integer>1</integer>
 			</array>
 		</array>
 		<key>Opened Steps</key>
